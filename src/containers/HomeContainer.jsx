@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import MainLayout from 'layouts/MainLayout.jsx';
+import MainLayout from 'layouts/MainLayout/MainLayout.jsx';
 
 
 const HomeContainer = ({ children }) => (

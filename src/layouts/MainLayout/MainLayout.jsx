@@ -1,3 +1,5 @@
+import './MainLayout.scss';
+
 import React, { PropTypes } from 'react';
 
 import BaseComponent from 'components/BaseComponent/BaseComponent.jsx';
