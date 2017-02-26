@@ -6,7 +6,7 @@ import BaseComponent from 'components/BaseComponent/BaseComponent.jsx';
 
 class Header extends BaseComponent {
   render() {
-    return <div className={this.cx()}>11111</div>;
+    return <div className={this.cx()}>Header</div>;
   }
 }
 

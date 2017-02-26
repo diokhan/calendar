@@ -1,5 +1,17 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { render } from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import HomeContainer from 'containers/HomeContainer.jsx';
+import CalendarContainer from 'containers/CalendarContainer.jsx';
+import NoMatch from 'components/NoMatch/NoMatch.jsx';
+
+
+render((
+  <Router history={browserHistory}>
+    <Route path="/" component={HomeContainer}>
+      <IndexRoute component={CalendarContainer} />
+      <Route path="*" component={NoMatch}/>
+    </Route>
+  </Router>
+), document.getElementById('root'))
