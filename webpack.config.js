@@ -1,5 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -20,7 +21,8 @@ module.exports = {
     publicPath: '/static/'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new CaseSensitivePathsPlugin(),
   ],
   module: {
     loaders: [
@@ -41,7 +43,11 @@ module.exports = {
   },
   postcss: () => {
     return [
-      require('postcss-import'),
+      require('postcss-import')({
+        path: [
+          path.resolve(__dirname, 'src', 'theme'),
+        ],
+      }),
       require('precss'),
       require('autoprefixer')
     ];

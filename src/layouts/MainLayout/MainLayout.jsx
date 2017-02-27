@@ -13,11 +13,11 @@ class MainLayout extends BaseComponent {
 
     return (
       <div className={this.cx()}>
-        <Header />
+        <Header className={this.cxEl('header')} />
         <div className={this.cxEl('content')}>
           {children}
         </div>
-        <Footer />
+        <Footer className={this.cxEl('footer')} />
       </div>
     );
   }
